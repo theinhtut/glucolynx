@@ -1,0 +1,9 @@
+% Always number from 1 and up, do not use 0.
+% At the moment 7 colors are maximum
+% Please email lan@kvl.dk if you want to increase this limit
+
+classes=[
+   ones(77,1)*1
+   ones(75,1)*2
+];
+
