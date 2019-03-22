@@ -13,25 +13,52 @@ fprintf('%s\n', fullLocation);
 %% Get file and transpose the data
 xTestPerson = xlsread(fullLocation, 'B23:B250');
 xTestPerson = xTestPerson.'; 
-% A=i(21:248,2);
-% importedCSV = importdata(fullLocation);
-% i=importedCSV.data;
-% data = readtable(fullLocation);
+xTP_Intensity = xlsread(fullLocation, 'D23:D250');
+xTP_Intensity = xTP_Intensity.';
 
 %% Load Pre-trained Model
 load('pretrainedModel.mat');
+
+%% Plot Blood Glucose NIR (Absorbance)
+figure(1);
+plot(wavelength,xTestPerson,'r');
+title('Your NIR Blood Glucose (Ab)');
+xlabel('wavelengths(nm)');
+ylabel('Absorbance(Ab)');
+
+% Figure 1 Positioning
+pos1 = get(gcf,'Position'); % get position of Figure(1) 
+set(gcf,'Position', pos1 - [pos1(3)/2,0,0,0]) % Shift position of Figure(1) 
+
+%% Plot Blood Glucose NIR (Intensity)
+figure(2)
+plot(wavelength,xTP_Intensity, 'color', [0.3010 0.7450 0.9330]);
+title('Your NIR Blood Glucose (I)');
+xlabel('wavelengths(nm)');
+ylabel('Intensity(I)');
+
+% Figure 2 Positioning
+set(gcf,'Position', get(gcf,'Position') + [0,0,150,0]); % When Figure(2) is not the same size as Figure(1)
+pos2 = get(gcf,'Position');  % get position of Figure(2) 
+set(gcf,'Position', pos2 + [pos1(3)/2,0,0,0]) % Shift position of Figure(2)
 
 %% Predict BG Level from the data input
 predModel2 = plspredict(xTestPerson,oneModel,2);
 predBGLevel = predModel2.Ypred(:,:,2);
 
-fprintf('Your predicted BG level: %4.2f\n', predBGLevel);
-%%
+resultMsg = sprintf('Your predicted BG level: %.4f mmol/L\n', predBGLevel);
+fprintf(resultMsg);
+
+uiwait(msgbox(resultMsg,'Glucolynx v1.0', 'help'));
+%% TEMP CODE
+
+% A=i(21:248,2);
+% importedCSV = importdata(fullLocation);
+% i=importedCSV.data;
+% data = readtable(fullLocation);
 
 % [YourImage, ~, ImageAlpha] = imread('favicon.png');
 % s=image(YourImage, 'AlphaData', ImageAlpha);
-
-
 
 % ToCrop  = imread('favicon.png','Background', [1 1 1]);
 % imshow(ToCrop);
@@ -40,9 +67,5 @@ fprintf('Your predicted BG level: %4.2f\n', predBGLevel);
 % A = imread('favicon.png');
 % imshow(A);
 
-
 % Run .m file
 % run('./cal.m');
-
-
-
