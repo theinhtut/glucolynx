@@ -1,6 +1,5 @@
 %% Clear Command Window & Clear Workspace
 clc;
-clear;
 
 %% Welcome Message Box
 uiwait(msgbox({'Welcome to Glucolynx v1.0';'Your Blood Glucose Level Monitoring App';'Press OK to choose your file(*.csv)'},'Glucolynx v1.0', 'help'));
@@ -45,6 +44,7 @@ set(gcf,'Position', pos2 + [pos1(3)/2,0,0,0]) % Shift position of Figure(2)
 %% Predict BG Level from the data input
 predModel2 = plspredict(xTestPerson,oneModel,2);
 predBGLevel = predModel2.Ypred(:,:,2);
+assignin('base', 'predBGLevel', predBGLevel);
 
 resultMsg = sprintf('Your predicted BG level: %.4f mmol/L\n', predBGLevel);
 fprintf(resultMsg);
