@@ -86,7 +86,10 @@ clc;
 evalin('base','clear')
 glucolynxApp;
 local_var = evalin('base' , 'predBGLevel')
+local_file = evalin('base' , 'filename')
 set(handles.bgValue, 'String', local_var);
+set(handles.fileNameText, 'String', local_file);
+
 
 
 % --- Executes on button press in clearBtn.
@@ -97,3 +100,4 @@ function clearBtn_Callback(hObject, eventdata, handles)
 clc;
 evalin('base','clear')
 set(handles.bgValue, 'String', '0');
+set(handles.fileNameText, 'String', '');

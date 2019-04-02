@@ -8,6 +8,7 @@ uiwait(msgbox({'Welcome to Glucolynx v1.0';'Your Blood Glucose Level Monitoring 
 [filename, pathname]=uigetfile({'*.csv'}, 'Select your NIR Blood Glucose Data File');
 fullLocation = strcat(pathname,filename);
 fprintf('%s\n', fullLocation);
+assignin('base', 'filename', filename);
 
 %% Get file and transpose the data
 xTestPerson = xlsread(fullLocation, 'B23:B250');
