@@ -54,6 +54,9 @@ L. Nørgaard, A. Saudland, J. Wagner, J.P. Nielsen, L. Munck and S.B. Engelsen, 
 
 R. Leardi and L. Nørgaard, Sequential application of backward interval-PLS and Genetic Algorithms for the selection of relevant spectral regions, Journal of Chemometrics, 18, 486-497, 2004.
 
+## Publication
+https://www.ijrte.org/wp-content/uploads/papers/v8i3S/C10041083S19.pdf
+
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
