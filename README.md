@@ -56,9 +56,9 @@ R. Leardi and L. Nørgaard, Sequential application of backward interval-PLS and 
 
 ## Publication
 **[Non-Invasive Blood Glucose Estimation using Handheld Near Infra-Red Device](https://www.ijrte.org/wp-content/uploads/papers/v8i3S/C10041083S19.pdf)**  
-_Mahmud Iwan Solihin, Yaameen Shameem, Thein Htut, Chun Kit Ang, Muzaiyanah bt Hidayab  
+_Mahmud Iwan Solihin, Yaameen Shameem, Thein Htut, Chun Kit Ang, Muzaiyanah bt Hidayab_  
 International Journal of Recent Technology and Engineering (IJRTE)  
-ISSN: 2277-3878, Volume-8 Issue-3S, October 2019_
+ISSN: 2277-3878, Volume-8 Issue-3S, October 2019
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
